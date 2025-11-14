@@ -6,12 +6,25 @@ name = "javascript"
 enabled = true
 
 [analyzers.meta]
-# ambiente Node.js — DeepSource usará verificações relevantes para projetos Node
+# ambiente Node.js — usado pelo analyzer JS
 environment = ["nodejs"]
-# ignora pastas geradas / dependências
-exclude_patterns = ["node_modules", ".git", "dist", "build"]
-# incluir extensões comuns do projeto
-extensions = ["js", "mjs", "cjs", "json", "html"]
 
-[analyzers.meta]
-exclude_patterns = ["node_modules", ".git"]
+# Analisa scripts shell (caso você adicione scripts .sh ou use comandos em CI)
+[[analyzers]]
+name = "shell"
+enabled = true
+
+# Analisa Dockerfiles (se adicionar Dockerfile ao repositório)
+[[analyzers]]
+name = "dockerfile"
+enabled = true
+
+# Analisa Markdown (README, docs)
+[[analyzers]]
+name = "markdown"
+enabled = true
+
+# Analisa YAML (GitHub Actions, k8s, etc.)
+[[analyzers]]
+name = "yaml"
+enabled = true
