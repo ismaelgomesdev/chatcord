@@ -13,10 +13,5 @@ exclude_patterns = ["node_modules", ".git", "dist", "build"]
 # incluir extensões comuns do projeto
 extensions = ["js", "mjs", "cjs", "json", "html"]
 
-# Analisa scripts shell (caso você adicione scripts .sh ou use comandos em CI)
-[[analyzers]]
-name = "shell"
-enabled = true
-
 [analyzers.meta]
 exclude_patterns = ["node_modules", ".git"]
